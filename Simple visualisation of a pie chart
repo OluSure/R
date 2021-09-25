@@ -1,0 +1,25 @@
+# First. I have installed some packages, how r works on mobile is different on a pc below is the package using install.packages
+install.packages(“e1071”) 
+update.packages(“e1071”) 
+library(e1071)
+
+#This is the name of my datset
+data(iris)
+# Set width and length which I will call later
+Petal.Width = 0.2 
+Petal.Length = 1.4
+#Make it a subset may be needed
+subset_Species = subset(iris, Petal.Length <= 1.4 & Petal.Width >= 0.2, select = Species )
+#I then tell r the subset are strings
+str(subset_Species)
+# I then create a tabe pointing it to a specific variable which is Species from my data iris
+table.iris = table(iris$Species)  
+table.iris 
+ # Make a pie chart of it
+pie(table.iris)  
+boxplot(Petal.Width ~ Species, data = iris)
+# Set the plotplot 
+#This would not show because am using a phone
+plot(x=iris$Petal.Length, y=iris$Petal.Width, col=iris$Species)
+#I then use a function called paris, to design the pie chart.
+ pairs(iris[1:4], main = "List of Species Data", pch = 21, bg = c("red", "green3", "blue")[unclass(iris$Species)])
